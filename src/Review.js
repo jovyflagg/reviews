@@ -34,7 +34,12 @@ const Review = () => {
  }
  
  const handleClickRandom = async () => {
-    await setIndex(Math.floor((Math.random() * 4)));
+    let randomNumber = await Math.floor(Math.random() * people.length)
+     await setIndex();
+     if(randomNumber === index) {
+        randomNumber = index + 1;
+     }
+     await setIndex(checkNumber(randomNumber));
  }
 
   return (
